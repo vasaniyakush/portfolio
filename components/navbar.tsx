@@ -75,9 +75,7 @@ export default function NavBar() {
         </div>
       </div>
       
-      <div className="navbar-brand">
-        
-      </div>
+    
     </nav>
   );
 }
