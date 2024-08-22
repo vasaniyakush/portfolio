@@ -7,14 +7,15 @@ export default function Home() {
         <div className="content">
           <h1>Kush Vasaniya</h1>
           <p className="subtitle">
-            You have read my name a lot of time now, haven't you? <br />
-            This website is under construction right now.
+            {"You have read my name a lot of time now, haven't you? "}
+            <br />
+            {"This website is under construction right now."}
           </p>
         </div>
         <br />
         <br />
         <div className="content">
-          <div className="title"> Here's what you can do:</div>
+          <div className="title"> {"Here's what you can do:"}</div>
           <ul>
             <li>Check out my GitHub profile.</li>
             <li>Connect with me on LinkedIn.</li>

@@ -38,7 +38,7 @@ export default function Footer() {
             <i className="fab fa-instagram"></i> Instagram
           </a>
         </p>
-        <p>You're awesome, chilllaxxx ;D</p>
+        <p>{"You're awesome, chilllaxxx ;D"}</p>
         <p>
           <sub>This footer is not footing right now</sub>
         </p>
