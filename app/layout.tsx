@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.scss";
 import NavBar from "@/components/navbar";
+import Footer from "@/components/footer";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
@@ -18,25 +19,8 @@ export default function RootLayout({
     <html className={"theme-dark"} lang="en">
       <body className={inter.className}>
         <NavBar></NavBar>
-
-        <h1>Let him cook..</h1>
-        <div id="cooking">
-          <div className="bubble"></div>
-          <div className="bubble"></div>
-          <div className="bubble"></div>
-          <div className="bubble"></div>
-          <div className="bubble"></div>
-          <div id="area">
-            <div id="sides">
-              <div id="pan"></div>
-              <div id="handle"></div>
-            </div>
-            <div id="pancake">
-              <div id="pastry"></div>
-            </div>
-          </div>
-        </div>
         {children}
+        <Footer></Footer>
       </body>
     </html>
   );
