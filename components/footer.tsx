@@ -37,6 +37,14 @@ export default function Footer() {
           >
             <i className="fab fa-instagram"></i> Instagram
           </a>
+          &nbsp;|&nbsp;
+          <a
+            href="https://monkeytype.com/profile/vasaniyakush1"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <i className="fab fa-instagram"></i> MonkeyType
+          </a>
         </p>
         <p>{"You're awesome, chilllaxxx ;D"}</p>
         <p>
