@@ -9,6 +9,9 @@ export default async function TypingSpeedData() {
     "https://api.monkeytype.com/users/personalBests?mode=time",
     {
       headers: headers,
+      next: {
+        revalidate: 3600 * 24, // 24 hour
+      },
     }
   );
   const TypingTimedata = (await response.json()).data;
@@ -21,8 +24,8 @@ export default async function TypingSpeedData() {
   );
   const TypingWordsdata = (await responseWords.json()).data;
 
-  console.log("Time", TypingTimedata);
-  console.log("Words", TypingWordsdata);
+  // console.log("Time", TypingTimedata);
+  // console.log("Words", TypingWordsdata);
 
   return (
     <div className="content">
@@ -43,25 +46,33 @@ export default async function TypingSpeedData() {
           <div className="level-item has-text-centered">
             <div>
               <p className="heading">15s</p>
-              <p className="title">{TypingTimedata["15"][0]["wpm"]}</p>
+              <p className="title">
+                {Math.round(TypingTimedata["15"][0]["wpm"])}
+              </p>
             </div>
           </div>
           <div className="level-item has-text-centered">
             <div>
               <p className="heading">30s</p>
-              <p className="title">{TypingTimedata["30"][0]["wpm"]}</p>
+              <p className="title">
+                {Math.round(TypingTimedata["30"][0]["wpm"])}
+              </p>
             </div>
           </div>
           <div className="level-item has-text-centered">
             <div>
               <p className="heading">60s</p>
-              <p className="title">{TypingTimedata["60"][0]["wpm"]}</p>
+              <p className="title">
+                {Math.round(TypingTimedata["60"][0]["wpm"])}
+              </p>
             </div>
           </div>
           <div className="level-item has-text-centered">
             <div>
               <p className="heading">120s</p>
-              <p className="title">{TypingTimedata["120"][0]["wpm"]}</p>
+              <p className="title">
+                {Math.round(TypingTimedata["120"][0]["wpm"])}
+              </p>
             </div>
           </div>
         </nav>
@@ -72,25 +83,33 @@ export default async function TypingSpeedData() {
           <div className="level-item has-text-centered">
             <div>
               <p className="heading">10 words</p>
-              <p className="title">{TypingWordsdata["10"][0]["wpm"]}</p>
+              <p className="title">
+                {Math.round(TypingWordsdata["10"][0]["wpm"])}
+              </p>
             </div>
           </div>
           <div className="level-item has-text-centered">
             <div>
               <p className="heading">25 words</p>
-              <p className="title">{TypingWordsdata["25"][0]["wpm"]}</p>
+              <p className="title">
+                {Math.round(TypingWordsdata["25"][0]["wpm"])}
+              </p>
             </div>
           </div>
           <div className="level-item has-text-centered">
             <div>
               <p className="heading">50 words</p>
-              <p className="title">{TypingWordsdata["50"][0]["wpm"]}</p>
+              <p className="title">
+                {Math.round(TypingWordsdata["50"][0]["wpm"])}
+              </p>
             </div>
           </div>
           <div className="level-item has-text-centered">
             <div>
               <p className="heading">100 words</p>
-              <p className="title">{TypingWordsdata["100"][0]["wpm"]}</p>
+              <p className="title">
+                {Math.round(TypingWordsdata["100"][0]["wpm"])}
+              </p>
             </div>
           </div>
         </nav>
