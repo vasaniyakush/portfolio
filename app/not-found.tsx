@@ -10,9 +10,8 @@ export default function Custom404() {
           <h2 className="subtitle is-3">
             {"Sorry I'm slow: I'm still working on this page."}
           </h2>
-          <p className="is-size-5">
-            {"Please come again another day. You're just awesome :D"}
-          </p>
+          <p className="is-size-5">{"Please come again another day. "}</p>
+          <p className="">You're just awesome :D</p>
           <br />
           <Link href="/" className="button is-light is-large">
             <div>Go Back Home</div>

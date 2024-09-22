@@ -34,14 +34,14 @@ export default function NavBar() {
 
   return (
     <nav
-      className="navbar is-fixed-top"
+      className="navbar is-fixed-top is-primary"
       role="navigation"
       aria-label="main navigation"
     >
-      <div className="navbar-brand">
-        <div className="navbar-item">
+      <div className="navbar-brand ml-3 ">
+        <div className="navbar-item ">
           <Link href={"/"}>
-            <h3 className="title is-3">Kush Vasaniya</h3>
+            <h3 className="title is-3 has-text-dark">Kush Vasaniya</h3>
           </Link>
         </div>
 

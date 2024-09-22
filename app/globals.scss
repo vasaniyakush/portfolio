@@ -10,3 +10,7 @@
 // @use "bulma/sass/components/navbar"
 
 @import "../node_modules/bulma/bulma.scss";
+
+// Import Component main Sass File
+@import '../node_modules/@creativebulma/bulma-collapsible/dist/css/bulma-collapsible.min.css';
+@import "../node_modules/@creativebulma/bulma-divider/dist/bulma-divider.css";
