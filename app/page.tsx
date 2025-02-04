@@ -19,10 +19,6 @@ export default function Home() {
           </div> */}
         </div>
       </section>
-
-      <section className="section is-medium">
-        <div className="columns"></div>
-      </section>
     </>
   );
 }
