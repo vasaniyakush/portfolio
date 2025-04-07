@@ -12,5 +12,15 @@
 @import "../node_modules/bulma/bulma.scss";
 
 // Import Component main Sass File
-@import '../node_modules/@creativebulma/bulma-collapsible/dist/css/bulma-collapsible.min.css';
+@import "../node_modules/@creativebulma/bulma-collapsible/dist/css/bulma-collapsible.min.css";
 @import "../node_modules/@creativebulma/bulma-divider/dist/bulma-divider.css";
+
+.icon {
+  border-radius: 50%;
+  transform: scale(1.25); /* Optional: scale effect */
+  transition: filter 0.1s ease, transform 0.1s ease;
+}
+
+.icon:hover {
+  padding: 1px; /* Apply blur effect */
+}

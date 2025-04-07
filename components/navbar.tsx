@@ -47,17 +47,6 @@ export default function NavBar() {
 
         <div className="navbar-item is-mobile">
           <div className="navbar-item buttons">
-            <style jsx>{`
-              .icon {
-                border-radius: 50%;
-                transform: scale(1.2); /* Optional: scale effect */
-                transition: filter 0.1s ease, transform 0.1s ease;
-              }
-
-              .icon:hover {
-                padding: 1px; /* Apply blur effect */
-              }
-            `}</style>
             {theme == "theme-dark" ? (
               <span onClick={toggleTheme} className="icon">
                 <Image width={40} height={40} alt="Light" src={sun.src}></Image>
@@ -89,16 +78,78 @@ export default function NavBar() {
         className={`navbar-menu ${isMenuOpen ? "is-active" : ""}`}
       >
         <div className="navbar-end">
-          <Link href={"/projects"} className="navbar-item">
-            Projects(if any?)
+          <Link href={"/career"} className="navbar-item">
+            Experience(+3xp)
           </Link>
 
-          <Link href={"/career"} className="navbar-item">
-            Career(for HR flattering)
-          </Link>
+          {/* Showcase */}
+          <div className="navbar-item has-dropdown is-hoverable">
+            <div className="navbar-link">
+              <Link href={"/showcase"} className="navbar-item">
+                Showcase(I build)
+              </Link>
+            </div>
+
+            <div className="navbar-dropdown">
+              <Link href={"/showcase/projects"} className="navbar-item">
+                Projects
+              </Link>
+              <Link href={"/showcase/achievements"} className="navbar-item">
+                Achievements
+              </Link>
+              <Link href={"/showcase/content"} className="navbar-item">
+                Youtube/Twitch
+              </Link>
+              <Link href={"/showcase/typing"} className="navbar-item">
+                I Type Fast
+              </Link>
+              <Link href={"/showcase/blogs"} className="navbar-item">
+                Blogs
+              </Link>
+              <Link href={"/showcase/poems"} className="navbar-item">
+                Poems
+              </Link>
+              <Link href={"/showcase/photography"} className="navbar-item">
+                Photography
+              </Link>
+              <hr className="navbar-divider" />
+              <Link
+                href={
+                  "https://onlychai.neocities.org/support.html?name=Kush%20Vasaniya&upi=vasaniyakush-1%40okhdfcbank"
+                }
+                target="_blank"
+                className="navbar-item"
+              >
+                Buy me a Chai
+              </Link>
+            </div>
+          </div>
+
+          {/* Shelf */}
+          <div className="navbar-item has-dropdown is-hoverable">
+            <div className="navbar-link">
+              <Link href={"/shelf"} className="navbar-item">
+                Shelf(They Build)
+              </Link>
+            </div>
+
+            <div className="navbar-dropdown">
+              <Link href={"/shelf/blogs"} className="navbar-item">
+                Blogs I have read
+              </Link>
+              <Link href={"/shelf/videos"} className="navbar-item">
+                Videos to watch
+              </Link>
+              <Link href={"/shelf/books"} className="navbar-item">
+                Books I have read
+              </Link>
+              <hr className="navbar-divider" />
+              <a className="navbar-item">Get Featured</a>
+            </div>
+          </div>
 
           <Link href={"/education"} className="navbar-item">
-            Education(*Redacted*)
+            Education(yappology)
           </Link>
         </div>
       </div>
