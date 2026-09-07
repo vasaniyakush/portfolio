@@ -76,3 +76,51 @@ export interface CareerEntry {
   /** Tech / tools shown as chips. `[]` hides the chip row. */
   stack: string[];
 }
+
+/*
+ * Shelf — things other people made. One JSON file per medium under /shelf.
+ */
+
+/** One book on the Shelf → Books page — `data/books.json`. */
+export interface BookEntry {
+  /** Book title. Also the React key, so keep it unique. */
+  title: string;
+  /** Author(s). */
+  author: string;
+  /** Optional year (read or published), shown as the chip. */
+  year?: string;
+  /** Optional one- or two-sentence take. */
+  note?: string;
+  /** Optional genre / topic chips. */
+  tags?: string[];
+  /** Optional external link — Goodreads, the publisher, an essay about it. */
+  link?: string;
+}
+
+/** One video on the Shelf → Videos page — `data/videos.json`. */
+export interface VideoEntry {
+  /** Video title. */
+  title: string;
+  /** Creator / channel. */
+  channel: string;
+  /** Watch link. Makes the title clickable; also the React key. */
+  url: string;
+  /** Optional one- or two-sentence take. */
+  note?: string;
+  /** Optional topic chips. */
+  tags?: string[];
+}
+
+/** One post on the Shelf → Blogs page — `data/blogs.json`. */
+export interface BlogEntry {
+  /** Post title. */
+  title: string;
+  /** Optional author or publication. */
+  author?: string;
+  /** Read link. Makes the title clickable; also the React key. */
+  url: string;
+  /** Optional one- or two-sentence take. */
+  note?: string;
+  /** Optional topic chips. */
+  tags?: string[];
+}

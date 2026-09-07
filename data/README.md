@@ -12,6 +12,9 @@ data/
   career.json     content for /career
   hobbies.json    content for /hobbies
   education.json  content for /education
+  books.json      content for /shelf/books
+  videos.json     content for /shelf/videos
+  blogs.json      content for /shelf/blogs
   <name>.json     content for /<name>
 ```
 
@@ -51,6 +54,10 @@ export default function Career() {
 `subtitle?` (string or JSX), `meta?` (the crayon-red chip — date / year /
 status), `points?` (bullets), `tags?` (chips), `children?` (free-form body).
 `EntryPage` props: `title`, `intro?`, `footnote?`, `footer?`.
+
+For a lighter treatment, render an `<EntryList items={[...]} />` instead of a
+stack of cards — a dotted list where each item is `{ title, href?, by?, aside?,
+note? }`. The Shelf pages use this.
 
 The typed assignment (`const CAREER: CareerEntry[] = careerData`) checks the JSON
 against the interface during `next build` (`resolveJsonModule` is on): a missing

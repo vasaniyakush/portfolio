@@ -23,7 +23,7 @@ export default function RootLayout({
       <body className={inter.className}>
         <script dangerouslySetInnerHTML={{ __html: themeInit }} />
         <NavBar></NavBar>
-        {children}
+        <main className="site-main">{children}</main>
         <Footer></Footer>
       </body>
     </html>

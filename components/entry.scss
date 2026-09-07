@@ -1,4 +1,4 @@
-/* Shared styling for data-driven list pages (EntryPage + EntryCard). */
+/* Shared styling for data-driven list pages (EntryPage + EntryCard + EntryList). */
 
 .entry-page-intro {
   color: var(--bulma-text-weak);
@@ -43,4 +43,36 @@
 
 .entry-tags .tag {
   margin: 0.15rem;
+}
+
+/* Dotted list — a lighter alternative to cards.
+   Capped height so a long list scrolls in place instead of stretching the page. */
+.entry-list-viewport {
+  max-height: min(65vh, 34rem);
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  padding-right: 0.5rem;
+}
+
+.entry-list {
+  list-style: disc;
+  padding-left: 1.25rem;
+  margin-top: 0.5rem;
+}
+
+.entry-list li {
+  margin-bottom: 0.7rem;
+  padding-left: 0.25rem;
+}
+
+.entry-list li::marker {
+  color: var(--bulma-primary);
+}
+
+.entry-list-by {
+  color: var(--bulma-text-weak);
+}
+
+.entry-list-note {
+  color: var(--bulma-text-weak);
 }
