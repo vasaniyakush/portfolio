@@ -1,0 +1,80 @@
+[
+  {
+    "company": "Sophos",
+    "location": "Bengaluru, India",
+    "role": "Software Engineer 1",
+    "timeframe": "May 2025 — Present",
+    "points": [
+      "Research and development on the Identity Threat Detection and Response product.",
+      "Developing and maintaining services that support the XDR product."
+    ],
+    "stack": ["Microsoft Entra ID", "GraphQL", "Spring Framework", "Cybersecurity"]
+  },
+  {
+    "company": "AppPerfect Corp",
+    "location": "Udaipur, India",
+    "role": "Software Engineer 1",
+    "timeframe": "Sep 2023 — Apr 2025",
+    "points": [
+      "Built data pipelines in Python and Spark SQL that pull from multiple sources into bronze, silver, and gold tables.",
+      "Refactored Plotly Dash dashboards — trimmed redundant callbacks and tuned SQL — for a ~30% performance bump.",
+      "Embedded Dash apps into Next.js via the Dash SDK, with JWT auth and RBAC for secure access.",
+      "Designed a reusable styled UI library so dashboards stay consistent and quick to assemble.",
+      "Stood up internal viewer-analytics and performance monitoring with Grafana and Prometheus."
+    ],
+    "stack": [
+      "Python Dash",
+      "Plotly",
+      "Spark SQL",
+      "Databricks",
+      "React.js",
+      "Next.js",
+      "Node.js"
+    ]
+  },
+  {
+    "company": "MetaBlock Technologies",
+    "location": "Jaipur, India",
+    "role": "SDE",
+    "timeframe": "Jul 2023 — Sep 2023",
+    "points": [
+      "Led a team of 5 developers building projects in the MERN stack.",
+      "Developed 50 REST endpoints across projects in 2 months: phone/email OTP auth, S3 file upload, payment integration, AWS Elastic Beanstalk deploys, and domain management.",
+      "Used transactions and locks to avoid write-write problems on a schema; the work contributed to a 20% revenue increase."
+    ],
+    "stack": ["React.js", "Next.js", "Node.js", "MongoDB", "AWS"]
+  },
+  {
+    "company": "Newton School",
+    "location": "Bengaluru, India",
+    "role": "Technical Content Engineer Intern",
+    "timeframe": "Mar 2023 — Sep 2023",
+    "points": [
+      "Worked with the front-end team to deliver high-quality solutions on the company's platform.",
+      "Built engaging, interactive coding questions with React.js, JavaScript, HTML, and CSS.",
+      "Wrote Cypress suites to test the React apps end to end."
+    ],
+    "stack": ["React.js", "JavaScript", "Cypress"]
+  },
+  {
+    "company": "Benefic Solutions",
+    "location": "Jaipur, India",
+    "role": "Back End Developer",
+    "timeframe": "Apr 2023 — Aug 2023",
+    "points": [
+      "Built 147+ endpoints and a 71-schema database for a social media, clubs, and vendor-booking app, working in a team of 2.",
+      "Implemented phone and email auth, Google login, push notifications, Spotify and Instagram integrations, payment integration, role management, a user recommendation system, and ticket/pass management."
+    ],
+    "stack": ["Node.js", "Firebase", "AWS"]
+  },
+  {
+    "company": "Science and Technology Club",
+    "location": "Jaipur, India",
+    "role": "Core Team Member — Tutor Head",
+    "timeframe": "Apr 2021 — Aug 2023",
+    "points": [
+      "Led the tutoring wing of the club, running events, bootcamps, and workshops for students."
+    ],
+    "stack": []
+  }
+]

@@ -1,0 +1,40 @@
+.hobby-card {
+  border-left: 3px solid var(--hobby-accent, var(--bulma-primary));
+}
+
+.hobby-card:not(:last-child) {
+  margin-bottom: 2rem;
+}
+
+.hobby-head {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.hobby-emoji {
+  flex: none;
+  display: grid;
+  place-items: center;
+  width: 3.25rem;
+  height: 3.25rem;
+  font-size: 1.6rem;
+  line-height: 1;
+  border-radius: 50%;
+  background-color: var(--bulma-scheme-main-ter);
+  border: 1px solid var(--hobby-accent, var(--bulma-border));
+}
+
+.hobby-since {
+  margin: 0;
+  font-size: 0.78rem;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: var(--bulma-text-weak);
+}
+
+.hobby-widget {
+  margin-top: 1.25rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--bulma-border-weak);
+}

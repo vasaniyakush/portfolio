@@ -1,0 +1,29 @@
+.intro-eyebrow {
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  color: var(--bulma-primary);
+  margin-bottom: 0.75rem;
+}
+
+.intro-muted {
+  color: var(--bulma-text-weak);
+}
+
+.intro .subtitle {
+  color: var(--bulma-text-weak);
+}
+
+.intro-links a {
+  white-space: nowrap;
+}
+
+.intro-sep {
+  color: var(--bulma-border);
+}
+
+.skills-cloud .tag {
+  margin: 0.2rem;
+  font-weight: 500;
+}

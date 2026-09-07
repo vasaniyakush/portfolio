@@ -1,102 +1,77 @@
 import Link from "next/link";
 
+const LINKS: { label: string; href: string; external?: boolean }[] = [
+  { label: "GitHub", href: "https://github.com/vasaniyakush", external: true },
+  {
+    label: "LinkedIn",
+    href: "https://www.linkedin.com/in/kush-vasaniya-667450210/",
+    external: true,
+  },
+  { label: "Twitter", href: "https://x.com/vasaniyakush", external: true },
+  {
+    label: "Instagram",
+    href: "https://www.instagram.com/vasaniyakush/",
+    external: true,
+  },
+  { label: "Email", href: "mailto:vasaniyakush@gmail.com" },
+];
+
 export default function Intro() {
   return (
-    <>
-      <div className="content">
-        <h1>Kush Vasaniya</h1>
-        <p className="subtitle">
-          You have read my name a lot of times now, haven't you?
-        </p>
-        <ul>
-          <li>
-            <p className="subtitle">
-              I'm a software developer with 3 YOE.<sup>[1]</sup>
-            </p>
-          </li>
-          <li>
-            <p className="subtitle">
-              I love to code and... cliché <sup>you get the point</sup>
-              <br />
-            </p>
-          </li>
-          <li>
-            <p className="subtitle">
-              FullStack, DevOps, and{" "}
-              <em className=" has-text-primary p-1">Exploring new things</em>{" "}
-              are my fortes.
-            </p>
-          </li>
-        </ul>
-      </div>
-      <div className="content mt-6">
-        <p className="is-size-7">
-          <sup>[1]</sup> Candidate investments are subject to market risks, read{" "}
-          <Link style={{ textDecoration: "underline" }} href="/experience">
-            experience related documents
-          </Link>{" "}
-          carefully before hiring.
-        </p>
-      </div>
-      <br />
-      <br />
+    <div className="content intro">
+      <p className="intro-eyebrow">Banswara / Jaipur, India</p>
+      <h1 className="title is-1 mb-3">Kush Vasaniya</h1>
+      <p className="subtitle is-4 mb-4">
+        Software Engineer 1 at Sophos · Cybersecurity · Technology
+      </p>
 
-      <div className="content">
-        <div className="title">Here's what you can do:</div>
-        <ul>
-          <li>
-            Check out my{" "}
-            <a
-              href="https://github.com/vasaniyakush"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <i className="fab fa-github"></i> GitHub
-            </a>{" "}
-            profile.
-          </li>
-          <li>
-            Connect with me on{" "}
-            <a
-              href="https://www.linkedin.com/in/kush-vasaniya-667450210/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <i className="fab fa-linkedin"></i> LinkedIn
-            </a>
-            .
-          </li>
-          <li>
-            Follow me on{" "}
-            <a
-              href="https://x.com/vasaniyakush"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <i className="fab fa-twitter"></i> Twitter
-            </a>
-            .
-          </li>
-          <li>
-            Stalk me on{" "}
-            <a
-              href="https://www.instagram.com/vasaniyakush/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <i className="fab fa-instagram"></i> Instagram
-            </a>
-            .
-          </li>
-          <li>
-            And then... maybe...
-            <a href="mailto:vasaniyakush@gmail.com?subject=Hello&body=I%20would%20like%20to%20connect!">
-              vasaniyakush@gmail.com
-            </a>
-            <em> Hire me :D </em>
-          </li>
-        </ul>
+      <p className="is-size-5">
+        I build backends, research cloud providers, and occassional deep dives
+        in tech. Right now I&apos;m on the Identity Threat Detection &amp;
+        Response team at{" "}
+        <a
+          href="https://www.sophos.com"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Sophos
+        </a>
+        , working on the XDR product.
+      </p>
+      <p className="is-size-6 intro-muted">
+        Before this: Plotly Dash dashboards and Spark pipelines at AppPerfect,
+        MERN products and REST APIs across a couple of startups, and a stint
+        writing interactive coding content at Newton School. Four NPTEL topper
+        certs and 1000+ solved DSA problems somewhere in there too.
+      </p>
+
+      <div className="buttons mt-5">
+        <Link href="/career" className="button is-primary is-medium">
+          See the experience
+        </Link>
+        <Link href="/resume" className="button is-medium">
+          Download CV
+        </Link>
       </div>
-    </>
+
+      <p className="is-size-6 intro-muted mt-5 mb-1">
+        Find me around the internet
+      </p>
+      <p className="is-size-6 intro-links">
+        {LINKS.map((link, i) => (
+          <span key={link.label}>
+            {i > 0 && <span className="intro-sep"> · </span>}
+            <a
+              href={link.href}
+              {...(link.external
+                ? { target: "_blank", rel: "noopener noreferrer" }
+                : {})}
+            >
+              {link.label}
+            </a>
+          </span>
+        ))}
+      </p>
+    </div>
   );
 }

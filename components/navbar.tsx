@@ -1,30 +1,54 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import sun from "../public/sun.png";
 import moon from "../public/moon.png";
 import Image from "next/image";
 import Link from "next/link";
 
+type Theme = "light" | "dark";
+
+const applyTheme = (theme: Theme) => {
+  const c = document.documentElement.classList;
+  c.remove("theme-light", "theme-dark");
+  c.add(`theme-${theme}`);
+};
+
 export default function NavBar() {
-  const [theme, setTheme] = useState("theme-dark");
+  // null until mounted — the pre-paint script owns the class before then.
+  const [theme, setTheme] = useState<Theme | null>(null);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  const toggleTheme = () => {
-    const currentTheme = document.documentElement.classList.contains(
-      "theme-light"
-    )
-      ? "light"
-      : "dark";
+  // Adopt the class the pre-paint script applied, then follow the OS while the
+  // user hasn't made an explicit choice.
+  useEffect(() => {
+    const read = (): Theme =>
+      document.documentElement.classList.contains("theme-dark")
+        ? "dark"
+        : "light";
 
-    if (currentTheme === "light") {
-      document.documentElement.classList.remove("theme-light");
-      document.documentElement.classList.add("theme-dark");
-      setTheme("theme-dark");
-    } else {
-      document.documentElement.classList.remove("theme-dark");
-      document.documentElement.classList.add("theme-light");
-      setTheme("theme-light");
+    // Client-only sync after mount; not derivable during SSR.
+    // eslint-disable-next-line react-hooks/set-state-in-effect
+    setTheme(read());
+
+    const mql = window.matchMedia("(prefers-color-scheme: dark)");
+    const onSystemChange = () => {
+      if (localStorage.getItem("theme")) return;
+      applyTheme(mql.matches ? "dark" : "light");
+      setTheme(read());
+    };
+    mql.addEventListener("change", onSystemChange);
+    return () => mql.removeEventListener("change", onSystemChange);
+  }, []);
+
+  const toggleTheme = () => {
+    const next: Theme = theme === "dark" ? "light" : "dark";
+    applyTheme(next);
+    setTheme(next);
+    try {
+      localStorage.setItem("theme", next);
+    } catch {
+      /* private mode / storage disabled — the selection just won't persist */
     }
   };
 
@@ -34,28 +58,41 @@ export default function NavBar() {
 
   return (
     <nav
-      className="navbar is-fixed-top is-primary"
+      className="navbar is-fixed-top"
       role="navigation"
       aria-label="main navigation"
     >
       <div className="navbar-brand ml-3 ">
         <div className="navbar-item ">
           <Link href={"/"}>
-            <h3 className="title is-3 has-text-dark">Kush Vasaniya</h3>
+            <h3 className="title is-3">Kush Vasaniya</h3>
           </Link>
         </div>
 
         <div className="navbar-item is-mobile">
           <div className="navbar-item buttons">
-            {theme == "theme-dark" ? (
-              <span onClick={toggleTheme} className="icon">
-                <Image width={40} height={40} alt="Light" src={sun.src}></Image>
-              </span>
-            ) : (
-              <span onClick={toggleTheme} className="icon">
-                <Image width={40} height={40} alt="Dark" src={moon.src}></Image>
-              </span>
-            )}
+            <span
+              onClick={toggleTheme}
+              className="icon"
+              role="button"
+              aria-label={
+                theme === "dark"
+                  ? "Switch to light theme"
+                  : "Switch to dark theme"
+              }
+              style={{
+                width: 40,
+                height: 40,
+                visibility: theme ? "visible" : "hidden",
+              }}
+            >
+              <Image
+                width={40}
+                height={40}
+                alt=""
+                src={theme === "dark" ? sun.src : moon.src}
+              />
+            </span>
           </div>
         </div>
         <a
@@ -79,14 +116,18 @@ export default function NavBar() {
       >
         <div className="navbar-end">
           <Link href={"/career"} className="navbar-item">
-            Experience(+3xp)
+            Experience
+          </Link>
+
+          <Link href={"/hobbies"} className="navbar-item">
+            Hobbies
           </Link>
 
           {/* Showcase */}
           <div className="navbar-item has-dropdown is-hoverable">
             <div className="navbar-link">
               <Link href={"/showcase"} className="navbar-item">
-                Showcase(I build)
+                Showcase
               </Link>
             </div>
 
@@ -100,7 +141,7 @@ export default function NavBar() {
               <Link href={"/showcase/content"} className="navbar-item">
                 Youtube/Twitch
               </Link>
-              <Link href={"/showcase/typing"} className="navbar-item">
+              <Link href={"/hobbies"} className="navbar-item">
                 I Type Fast
               </Link>
               <Link href={"/showcase/blogs"} className="navbar-item">
@@ -129,7 +170,7 @@ export default function NavBar() {
           <div className="navbar-item has-dropdown is-hoverable">
             <div className="navbar-link">
               <Link href={"/shelf"} className="navbar-item">
-                Shelf(They Build)
+                Shelf
               </Link>
             </div>
 
@@ -149,7 +190,7 @@ export default function NavBar() {
           </div>
 
           <Link href={"/education"} className="navbar-item">
-            Education(yappology)
+            Education
           </Link>
         </div>
       </div>

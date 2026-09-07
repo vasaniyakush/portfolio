@@ -15,12 +15,112 @@
 @import "../node_modules/@creativebulma/bulma-collapsible/dist/css/bulma-collapsible.min.css";
 @import "../node_modules/@creativebulma/bulma-divider/dist/bulma-divider.css";
 
-.icon {
-  border-radius: 50%;
-  transform: scale(1.25); /* Optional: scale effect */
-  transition: filter 0.1s ease, transform 0.1s ease;
+/* ------------------------------------------------------------------
+   Theme — "Warm editorial"
+     Warm paper background, near-black ink, one muted clay accent.
+     Minimalist: flat surfaces, hairline borders, no heavy shadows.
+
+     light  paper #F6F4EF · ink #2A2723 · clay #A94F3A
+     dark   paper #1B1917 · ink #E5DED4 · clay #D9765D
+------------------------------------------------------------------ */
+:root,
+.theme-light {
+  --accent: #a94f3a;
+
+  /* accent — Bulma derives buttons/tags/etc. from the H/S/L triplet */
+  --bulma-primary-h: 11deg;
+  --bulma-primary-s: 49%;
+  --bulma-primary-l: 45%;
+  --bulma-link-h: 10deg;
+  --bulma-link-s: 54%;
+  --bulma-link-l: 43%;
+  --bulma-link-text: #a5432e;
+  --bulma-link-text-hover: #853624;
+
+  /* warm neutrals */
+  --bulma-scheme-h: 30deg;
+  --bulma-scheme-s: 12%;
+
+  --bulma-body-background-color: #f6f4ef;
+  --bulma-scheme-main: #fcfbf8;
+  --bulma-scheme-main-bis: #f1ede4;
+  --bulma-scheme-main-ter: #e9e4d9;
+  --bulma-background: #efebe2;
+
+  --bulma-border-weak: #e8e2d6;
+  --bulma-border: #d9d1c2;
+
+  --bulma-text: #2a2723;
+  --bulma-text-weak: #6c6459;
+  --bulma-text-strong: #1a1714;
+  --bulma-text-title: #141210;
+
+  --bulma-radius-small: 4px;
+  --bulma-radius: 6px;
+  --bulma-radius-large: 8px;
+
+  --bulma-shadow: none;
 }
 
-.icon:hover {
-  padding: 1px; /* Apply blur effect */
+/* Dark counterpart for the navbar toggle */
+.theme-dark {
+  --accent: #d9765d;
+
+  --bulma-primary-h: 12deg;
+  --bulma-primary-s: 60%;
+  --bulma-primary-l: 61%;
+  --bulma-link-h: 13deg;
+  --bulma-link-s: 62%;
+  --bulma-link-l: 70%;
+  --bulma-link-text: #e08a72;
+  --bulma-link-text-hover: #eaa08b;
+
+  --bulma-scheme-h: 28deg;
+  --bulma-scheme-s: 8%;
+
+  --bulma-body-background-color: #1b1917;
+  --bulma-scheme-main: #242120;
+  --bulma-scheme-main-bis: #2c2825;
+  --bulma-scheme-main-ter: #35302c;
+  --bulma-background: #2c2825;
+
+  --bulma-border-weak: #332f2b;
+  --bulma-border: #443e39;
+
+  --bulma-text: #e5ded4;
+  --bulma-text-weak: #a89f92;
+  --bulma-text-strong: #f4efe7;
+  --bulma-text-title: #f8f4ec;
+
+  --bulma-shadow: none;
+}
+
+html,
+body {
+  background-color: var(--bulma-body-background-color);
+}
+
+/* Flat surfaces with a hairline instead of shadows */
+.box,
+.card {
+  box-shadow: none;
+  border: 1px solid var(--bulma-border-weak);
+}
+
+.navbar.is-fixed-top {
+  box-shadow: none;
+  border-bottom: 1px solid var(--bulma-border-weak);
+}
+
+hr {
+  background-color: var(--bulma-border-weak);
+}
+
+.button {
+  box-shadow: none;
+}
+
+.icon {
+  border-radius: 50%;
+  transition: filter 0.1s ease, transform 0.1s ease;
 }
